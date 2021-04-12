@@ -71,7 +71,7 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    {{--                                                <a class="btn btn-sm btn-info" href="#"><i class="fa fa-eye" aria-hidden="true"></i></a>--}}
+                                                     <a class="btn btn-sm btn-info" href="#"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                                     <a edit_id="{{ $data -> id }}" class="btn btn-sm btn-warning edit_cat" href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 
                                                     <form class="d-inline" action="{{ route('category.destroy', $data -> id) }}" method="POST">

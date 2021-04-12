@@ -54,3 +54,4 @@ Route::get('category/status-active/{id}' , 'App\Http\Controllers\CategoryControl
 // Post Tag Route
 Route::resource('tag' , 'App\Http\Controllers\TagController');
 
+

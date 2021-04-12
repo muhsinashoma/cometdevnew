@@ -15,11 +15,16 @@ class TagController extends Controller
      */
     public function index()
     {
-
         $data = Tag::all();
-        return view('admin.post.tag.index', [
-            'all_data'          => $data
+
+        return view('admin.post.tag.index',[
+            'all_data' =>$data
         ]);
+
+//        $data = Tag::all();
+//        return view('admin.post.tag.index', [
+//            'all_data'          => $data
+//        ]);
     }
 
     /**
@@ -49,7 +54,7 @@ class TagController extends Controller
             'slug'      => Str::slug($request -> name),
         ]);
 
-        return redirect() -> route('tag.index') -> with('success', 'Tag added successful');
+        return redirect() -> route('tag.index') -> with('success', 'Tag Added Successfully');
     }
 
     /**

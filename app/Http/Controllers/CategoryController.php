@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 //use App\Models\Category;
+//use App\Models\Category;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -104,14 +105,26 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $edit_id = $request -> edit_id;
 
-        $edit_data =  Category::find($edit_id);
-        $edit_data -> name = $request -> name;
-        $edit_data -> slug = Str::slug($request -> name);
+        return $request -> all();              //recieved all field value from ajax method
+
+        $edit_id = $request->edit_id;
+        $edit_data =Category::find($edit_id);
+
+        $edit_data -> name = $request->name;
+        $edit_data -> slug = Str::slug($request->slug);
         $edit_data -> update();
 
-        return redirect() -> back() -> with('success', 'Category updated successful');
+        return redirect() ->back() ->with('success', 'Category Updated Successfully');
+
+//        $edit_id = $request -> edit_id;
+//
+//        $edit_data =  Category::find($edit_id);
+//        $edit_data -> name = $request -> name;
+//        $edit_data -> slug = Str::slug($request -> name);
+//        $edit_data -> update();
+//
+//        return redirect() -> back() -> with('success', 'Category Updated Successful');
     }
 
     /**
