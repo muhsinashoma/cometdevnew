@@ -19,14 +19,19 @@ class PostController extends Controller
     public function index()
     {
 
-        $data = Post::where('trash', false) -> get();
-        $published = Post::where('trash', false) -> get() -> count();
-        $trash = Post::where('trash', true) -> get() -> count();
+        $data = Post::all();
         return view('admin.post.index', [
-            'all_data'      => $data,
-            'published'     => $published,
-            'trash'         => $trash,
-        ]);
+                'all_data' => $data
+            ]);
+
+//        $data = Post::where('trash', false) -> get();
+//        $published = Post::where('trash', false) -> get() -> count();
+//        $trash = Post::where('trash', true) -> get() -> count();
+//        return view('admin.post.index', [
+//            'all_data'      => $data,
+//            'published'     => $published,
+//            'trash'         => $trash,
+//        ]);
     }
 
 

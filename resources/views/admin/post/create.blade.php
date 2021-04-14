@@ -78,13 +78,33 @@
                                     <div class="form-group row">
                                         <label class="col-lg-3 col-form-label">Tags</label>
                                         <div class="col-lg-9">
-                                            <select style="width: 100%;" name="tag[]"  class="post_tag_select" multiple="multiple">
-                                                @foreach($all_tag as $tag)
-                                                <option value="{{ $tag -> id }}">{{ $tag -> name }}</option>
+
+                                            <select style="width: 100%;" name="tag[]" class="post_tag_select" multiple="multiple">
+                                           @foreach($all_tag as $tag)
+                                                <option value="{{ $tag->id }}">{{ $tag ->name}}</option>
                                                 @endforeach
                                             </select>
+
+                                            {{--<select style="width: 100%;" name="tag[]"  class="post_tag_select" multiple="multiple">--}}
+                                                {{--@foreach($all_tag as $tag)--}}
+                                                {{--<option value="{{ $tag -> id }}">{{ $tag -> name }}</option>--}}
+                                                {{--@endforeach--}}
+                                            {{--</select>--}}
                                         </div>
                                     </div>
+
+
+                                     {{--<div class="form-group row">--}}
+                                         {{--<label class="col-lg-3">Featured Image</label>--}}
+                                            {{--<div class="col-lg-9">--}}
+                                                {{--<img style="width: 400px" class="post_img_load" src="" alt=""> <br><br>--}}
+                                                {{--<label for="post_img_select"><img style="width: 100px; cursor: pointer" src="{{ URL::to('admin/assets/img/img.jpg') }}" alt=""></label>--}}
+                                                {{--<input style="display: none" type="file"  id="post_img_select">--}}
+                                            {{--</div>--}}
+
+                                     {{--</div>--}}
+
+
 
                                     <div class="post-image">
                                         <div class="form-group row">
