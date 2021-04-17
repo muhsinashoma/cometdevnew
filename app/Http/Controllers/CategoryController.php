@@ -106,7 +106,7 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
 
-        return $request -> all();              //recieved all field value from ajax method
+        //return $request -> all();              //recieved all field value from ajax method
 
         $edit_id = $request->edit_id;
         $edit_data =Category::find($edit_id);

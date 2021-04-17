@@ -92,24 +92,35 @@
         $('#post_img_select').change(function (e) {
             e.preventDefault();
             let img_url = URL.createObjectURL(e.target.files[0]);    // alert(img_url);
-
-            console.log(img_url);
-
+           // console.log(img_url);
             $('.post_img_load').attr('src', img_url);
         });
 
 
-        // Post img garally
+        // Post img for gallery
         $('#post_img_select_g').change(function (e) {
 
+            //sconsole.log(e);
+            console.log(e.target.files);  // to show the file length
+
             let img_gall = '';
-            for(let i = 0; i < e.target.files.length ; i++){
-                let file_url = URL.createObjectURL(e.target.files[i]);
-                img_gall += '<img class="shadow" src="'+file_url+'">';
+            for (let i =0; i< e.target.files.length; i++){
+                let file_url = URL.createObjectURL(e.target.files[i]);      //alert(file_url);
+                console.log(file_url);
+                img_gall += '<img class="shadow" src="'+file_url+'">';                     //alert(img_gall);
             }
 
             $('.post-gallery-img').html(img_gall);
 
+
+            // let img_gall = '';
+            // for(let i = 0; i < e.target.files.length ; i++){
+            //     let file_url = URL.createObjectURL(e.target.files[i]);
+            //     img_gall += '<img class="shadow" src="'+file_url+'">';
+            // }
+            //
+            // $('.post-gallery-img').html(img_gall);
+            //
 
         });
 

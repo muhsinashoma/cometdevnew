@@ -13,13 +13,13 @@ class Post extends Model
     protected  $guarded = [];
 
 
-    public function user(){
-        return $this -> belongsTo('App\Models\User');
-    }
-
-
-    public function categories(){
-        return $this -> belongsToMany('App\Models\Category');
-    }
+//    public function user(){
+//        return $this -> belongsTo('App\Models\User');
+//    }
+//
+//
+//    public function categories(){
+//        return $this -> belongsToMany('App\Models\Category');
+//    }
 
 }

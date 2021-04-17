@@ -45,6 +45,9 @@
                                 {{--<a class="badge badge-primary" href="{{ route('post.index') }}">Published {{ ($published == 0 ? '' : $published) }}</a>--}}
                                 {{--<a class="badge badge-danger" href="{{ route('post.trash') }}">Trash {{ ($trash == 0 ? '' : $trash) }}</a>--}}
 
+                                <a class="badge badge-primary" href="{{ route('post.index') }}">Published </a>
+                                <a class="badge badge-danger" href="{{ route('post.trash') }}">Trash </a>
+
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -53,7 +56,7 @@
                                         <tr>
                                             <th>#</th>
                                             <th>Title</th>
-                                            <th>Author</th>
+                                            {{--<th>Author</th>--}}
                                             <th>Post Type</th>
                                             <th>Post  Category</th>
                                             <th>Post  Tag</th>
@@ -67,23 +70,29 @@
                                         @foreach( $all_data as $data )
 
                                             @php
-                                                $featured_data = json_decode($data -> featured);
+                                                 $featured_data = json_decode($data -> featured);
+                                                // echo  $featured_data ->post_type;
                                             @endphp
 
                                             <tr>
                                                 <td>{{ $loop -> index + 1 }}</td>
                                                 <td>{{ $data -> title }}</td>
-                                                <td>{{ $data  -> user -> name }}</td>
-                                                <td>{{ $featured_data -> post_type  }}</td>
-                                                <td>
-                                                    <ul>
-                                                    @foreach( $data -> categories as $cat )
-                                                            <li>{{ $cat -> name }}</li>
-                                                    @endforeach
-                                                    </ul>
-                                                </td>
-                                                <td>{{ $featured_data -> post_type  }}</td>
-                                                <td> {{ $data -> created_at -> diffForHumans() }}</td>
+                                                {{--<td>{{ $data  -> user -> name }}</td>--}}
+                                                <td>{{$featured_data -> post_type}}</td>
+                                                <td>Post  Category</td>
+                                                <td>Post  Tag</td>
+                                                <td>{{$data -> created_at ->diffForHumans()}}</td>
+
+                                                {{--<td>{{ $featured_data -> post_type  }}</td>--}}
+                                                {{--<td>--}}
+                                                    {{--<ul>--}}
+                                                    {{--@foreach( $data -> categories as $cat )--}}
+                                                            {{--<li>{{ $cat -> name }}</li>--}}
+                                                    {{--@endforeach--}}
+                                                    {{--</ul>--}}
+                                                {{--</td>--}}
+                                                {{--<td>{{ $featured_data -> post_type  }}</td>--}}
+                                                {{--<td> {{ $data -> created_at -> diffForHumans() }}</td>--}}
                                                 <td>
                                                     <div class="status-toggle">
                                                         <input  type="checkbox" status_id="{{ $data -> id }}"  {{ ( $data -> status == true ? 'checked="checked"' : '' ) }} id="cat_status_{{ $loop -> index + 1 }}" class="check cat_check" >
@@ -91,9 +100,16 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    {{--                                                <a class="btn btn-sm btn-info" href="#"><i class="fa fa-eye" aria-hidden="true"></i></a>--}}
+                                                    <a class="btn btn-sm btn-info" href="#"><i class="fa fa-eye" aria-hidden="true"></i></a>
+
                                                     <a edit_id="{{ $data -> id }}" class="btn btn-sm btn-warning edit_cat" href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                                    <a class="btn btn-sm btn-danger" href="{{ route('post.trash.update', $data -> id ) }}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+
+                                                    <a class="btn btn-sm btn-danger" href="{{route('post.trash.update', $data->id)}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+
+
+                                                    {{--{{'Put or Patch is used in form page for delete in resouce controller'}}-- here we are using custome method by using get method}}
+
+                                                    {{--<a class="btn btn-sm btn-danger" href="{{ route('post.trash.update', $data -> id ) }}"><i class="fa fa-trash" aria-hidden="true"></i></a>--}}
 
 
                                                 </td>
