@@ -19,10 +19,20 @@ Route::get('/', function () {
 
 
 
-// Frontend Controller
-Route::get('blog', [App\Http\Controllers\BlogPageController::class , 'showBlogPage']);
+// Frontend Controller backup today
+//Route::get('blog', [App\Http\Controllers\BlogPageControllerBackup::class , 'showBlogPage']);
+
+//Frontend Controller
+
+Route::get('blog', [App\Http\Controllers\BlogPageController::class, 'showBlogPage']);
 
 
+//Route::get('blog', function(){ }); //This is called callback function/closer function/anonimous function/
+
+//To show blog page without BlogPageController
+//Route::get('blog', function(){
+//   return view('comet.blog');
+//});
 
 
 // Admin template load

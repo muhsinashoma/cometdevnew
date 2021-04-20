@@ -96,10 +96,8 @@ class PostController extends Controller
      */
     public function create()
     {
-
         $cat = Category::all();
         $tag = Tag::all();
-
         return view('admin.post.create', [
             'all_cat'       => $cat,
             'all_tag'       => $tag,
