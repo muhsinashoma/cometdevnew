@@ -21,8 +21,12 @@ class PostController extends Controller
 
       //  $data = Post::all();
         $data = Post::where('trash',false) -> get();
+        $published = Post::where('trash', false) ->get()->count();
+        $trash = Post::where('trash', true) ->get() ->count();
         return view('admin.post.index', [
-                'all_data' => $data
+                'all_data'   => $data,
+                'published'  => $published,
+                'trash'      => $trash,
             ]);
 
 //        $data = Post::where('trash', false) -> get();
@@ -41,19 +45,14 @@ class PostController extends Controller
      */
     public function postTrashShow()
     {
-        $data = Post::where('trash', true) ->get();
-         return view('admin.post.trash', [
-            'all_data' => $data
-        ] );
-
-//        $data = Post::where('trash', true) -> get();
-//        $published = Post::where('trash', false) -> get() -> count();
-//        $trash = Post::where('trash', true) -> get() -> count();
-//        return view('admin.post.trash', [
-//            'all_data'      => $data,
-//            'published'     => $published,
-//            'trash'         => $trash,
-//        ]);
+        $data = Post::where('trash', true) -> get();
+        $published = Post::where('trash', false) -> get() -> count();
+        $trash = Post::where('trash', true) -> get() -> count();
+        return view('admin.post.trash', [
+            'all_data'      => $data,
+            'published'     => $published,
+            'trash'         => $trash,
+        ]);
     }
 
     /**

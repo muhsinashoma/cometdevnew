@@ -45,8 +45,8 @@
                                 {{--<a class="badge badge-primary" href="{{ route('post.index') }}">Published {{ ($published == 0 ? '' : $published) }}</a>--}}
                                 {{--<a class="badge badge-danger" href="{{ route('post.trash') }}">Trash {{ ($trash == 0 ? '' : $trash) }}</a>--}}
 
-                                <a class="badge badge-primary" href="{{ route('post.index') }}">Published </a>
-                                <a class="badge badge-danger" href="{{ route('post.trash') }}">Trash </a>
+                                <a class="badge badge-primary" href="{{ route('post.index') }}">Published {{ ($published==0 ? '' : $published) }} </a>
+                                <a class="badge badge-danger" href="{{ route('post.trash') }}">Trash {{$trash==0 ? '' : $trash}} </a>
 
                             </div>
                             <div class="card-body">
