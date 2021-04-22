@@ -11,12 +11,16 @@
                     <div class="blog-posts">
 
 
-
+                    {{--@php--}}
+                    {{--$featured = json_decode($post -> featured );--}}
+                    {{--@endphp--}}
 
                     @foreach($all_posts as $post)
-                        {{--@php--}}
-                            {{--$featured = json_decode($post -> featured );--}}
-                        {{--@endphp--}}
+
+                        @php
+                        $featured = json_decode($post -> featured)
+                        @endphp
+
                         <!-- end of article-->
                             <article class="post-single">
                                 <div class="post-info">
@@ -29,6 +33,36 @@
                                 </div>
 
 
+                                @if($featured ->post_type == 'Image')
+
+                                    <div class="post-media">
+                                        <a href="#">
+                                            <img src="{{(URL::to(''))}}/media/posts/{{$featured ->post_image  }}" alt="">
+
+                                        </a>
+                                    </div>
+
+                                    @endif
+
+
+
+                                @if($featured ->post_type =='Gallery')
+                                <div class="post-media">
+                                    <div data-options="{&quot;animation&quot;: &quot;slide&quot;, &quot;controlNav&quot;: true" class="flexslider nav-outside">
+                                        <ul class="slides">
+
+                                            @foreach($featured ->post_gallery as $gall)
+                                            <li class="" style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;">
+                                                <img src="{{ URL::to('') }}/media/posts/{{ $gall }}" alt="" draggable="true">
+                                            </li>
+                                             @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                @endif
+
+
                                 {{--@if( $featured -> post_type == 'Image' )--}}
                                     {{--<div class="post-media">--}}
                                         {{--<a href="#">--}}
@@ -36,6 +70,8 @@
                                         {{--</a>--}}
                                     {{--</div>--}}
                                 {{--@endif--}}
+
+
 
                                 {{--@if( $featured -> post_type == 'Gallery' )--}}
                                     {{--<div class="post-media">--}}

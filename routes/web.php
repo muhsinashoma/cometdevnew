@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 
 
-// Frontend Controller backup today
+// Frontend Controller backup
 //Route::get('blog', [App\Http\Controllers\BlogPageControllerBackup::class , 'showBlogPage']);
 
 //Frontend Controller
