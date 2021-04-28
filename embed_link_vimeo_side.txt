@@ -1,0 +1,13 @@
+https://player.vimeo.com/video/122728060  -> embed link of vimeo
+
+https://vimeo.com/122728060  -> normal of vimeo
+
+How to conver normal of vimeo to embed link of vimeo
+
+https://player.vimeo.com/video/122728060
+
+
+https://www.youtube.com/embed/q2BufJJZeuQ
+
+
+slide # 51
