@@ -27,7 +27,7 @@
                                     <h2><a href="#">{{ $post -> title }}</a></h2>
 
 
-                                    <h6 class="upper"><span>By</span><a href=""> Admin </a><span class="dot"></span><span>{{ date('d F, Y', strtotime($post -> created_at) ) }}</span><span class="dot"></span>
+                                    <h6 class="upper"><span>By</span><a href=""> {{ $post ->user ->name }} </a><span class="dot"></span><span>{{ date('d F, Y', strtotime($post -> created_at) ) }}</span><span class="dot"></span>
 
                                     {{--<h6 class="upper"><span>By</span><a href=""> {{ $post -> user -> name }}</a><span class="dot"></span><span>{{ date('d F, Y', strtotime($post -> created_at) ) }}</span><span class="dot"></span>--}}
 

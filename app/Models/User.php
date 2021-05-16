@@ -37,9 +37,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+
     public function posts(){
-        return $this -> hasMany('App\Models\Post');
+        return $this -> hasMany('App\Models\Post');   //since there are not post id inside user table, for this we will use hasMany() function
     }
+//    public function posts(){
+//        return $this -> hasMany('App\Models\Post');
+//    }
 
 
 

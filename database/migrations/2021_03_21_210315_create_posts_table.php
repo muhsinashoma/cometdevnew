@@ -20,8 +20,8 @@ class CreatePostsTable extends Migration
             $table->string('slug');
             $table->string('featured') -> nullable();
             $table->longText('content');
-            $table->boolean('status') -> default(true);
-            $table->boolean('trash') -> default(false);
+            $table->boolean('status') ->default(true);
+            $table->boolean('trash') ->default(false);
             $table->timestamps();
         });
     }

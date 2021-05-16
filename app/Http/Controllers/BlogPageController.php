@@ -12,9 +12,16 @@ class BlogPageController extends Controller
      */
 
     public function showBlogPage(){
+        $all_posts = Post::where([
+            ['status', '=', true],
+            ['trash', '=', false]
+        ]) ->latest() -> paginate(3);
 
-        $all_posts = Post::where('status', true) -> where('trash', false)->latest()->paginate(3);
-       // $all_posts = Post::where('status', true) -> where('trash', false) -> latest()-> paginate(3);
+        //or
+        // $all_posts = Post::where('status', '=', true) -> where('trash','=', false) ->latest()->paginate(3);
+
+        // $all_posts = Post::where('status', true) -> orWhere('trash', false)->latest()->paginate(3);
+        // $all_posts = Post::where('status', true) -> where('trash', false) -> latest()-> paginate(3);
         return view('comet.blog', [
             'all_posts'     => $all_posts
         ]);
