@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2021 at 10:30 PM
+-- Generation Time: May 18, 2021 at 05:11 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -41,14 +41,45 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `slug`, `status`, `created_at`, `updated_at`) VALUES
-(11, 'Fruits-est', 'fruits-est', 1, '2021-04-10 18:51:42', '2021-04-12 17:28:37'),
-(12, 'Fish', 'fish', 0, '2021-04-10 19:15:03', '2021-04-28 21:02:57'),
-(16, 'Dresses-test', '', 1, '2021-04-12 17:37:37', '2021-04-12 17:47:12'),
-(17, 'Education', 'education', 1, '2021-04-12 17:47:42', '2021-04-12 17:47:42'),
-(18, 'Food System', 'food-system', 1, '2021-04-12 18:01:56', '2021-04-12 18:01:56'),
-(19, 'Korona Virus', 'korona-virus', 0, '2021-04-15 08:49:43', '2021-05-16 11:14:27'),
-(20, 'Cartoon', 'cartoon', 0, '2021-04-28 09:51:48', '2021-05-16 11:14:19'),
-(21, 'Eid Offer', 'eid-offer', 1, '2021-05-16 11:41:36', '2021-05-16 11:41:36');
+(1, 'Eid Offer', 'eid-offer', 1, '2021-05-17 13:54:02', '2021-05-17 13:54:02'),
+(2, 'Food System', 'food-system', 1, '2021-05-17 13:54:24', '2021-05-17 13:54:24'),
+(3, 'Flower', 'flower', 1, '2021-05-17 13:55:13', '2021-05-17 13:55:13'),
+(4, 'Dress', 'dress', 1, '2021-05-17 14:03:38', '2021-05-17 14:03:38'),
+(5, 'Cartoon', 'cartoon', 1, '2021-05-17 14:04:10', '2021-05-17 14:04:10'),
+(6, 'Muslim', 'muslim', 1, '2021-05-17 14:48:15', '2021-05-17 14:48:15'),
+(7, 'International', 'international', 1, '2021-05-17 15:31:59', '2021-05-17 15:31:59'),
+(8, 'Potitics', 'potitics', 1, '2021-05-17 15:32:18', '2021-05-17 15:32:18'),
+(9, 'Health', 'health', 1, '2021-05-18 12:32:33', '2021-05-18 12:32:33');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category_post`
+--
+
+CREATE TABLE `category_post` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `post_id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `category_post`
+--
+
+INSERT INTO `category_post` (`id`, `post_id`, `category_id`, `created_at`, `updated_at`) VALUES
+(1, 38, 1, NULL, NULL),
+(2, 38, 2, NULL, NULL),
+(3, 38, 6, NULL, NULL),
+(4, 39, 1, NULL, NULL),
+(5, 40, 6, NULL, NULL),
+(6, 41, 6, NULL, NULL),
+(7, 42, 2, NULL, NULL),
+(8, 42, 5, NULL, NULL),
+(9, 42, 6, NULL, NULL),
+(10, 42, 9, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -87,9 +118,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (10, '2014_10_12_100000_create_password_resets_table', 1),
 (11, '2019_08_19_000000_create_failed_jobs_table', 1),
 (13, '2021_03_10_220722_create_roles_table', 2),
-(15, '2021_04_08_191952_create_categories_table', 2),
 (16, '2021_03_21_210315_create_posts_table', 3),
-(17, '2021_03_25_212359_create_tags_table', 3);
+(17, '2021_03_25_212359_create_tags_table', 3),
+(18, '2021_03_21_211321_create_categories_table', 4),
+(19, '2021_04_01_233119_create_category_post_table', 4);
 
 -- --------------------------------------------------------
 
@@ -127,20 +159,11 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `title`, `user_id`, `slug`, `featured`, `content`, `status`, `trash`, `created_at`, `updated_at`) VALUES
-(13, 'Govt issues notification extending lockdown', 2, 'govt-issues-notification-extending-lockdown', '{\"post_type\":\"Image\",\"post_image\":\"085a32dbe9c13c08cd693d0e1af66aa8.jpg\",\"post_gallery\":[],\"post_video\":null,\"post_audio\":null}', '<p>The government has issued a notification extending the ongoing countrywide lockdown till 28 April.</p>\r\n\r\n<p>The Cabinet division issued the notification on Tuesday.</p>\r\n\r\n<p>Earlier on Monday, a meeting of the cabinet division decided to extend the lockdown to control the surge of coronavirus cases in the country. The National Technical Advisory Committee on Covid-19 also recommended the extension for seven more days.</p>', 1, 1, '2021-04-20 10:50:58', '2021-04-28 21:22:23'),
-(14, '7 more Hefazat men held', 3, '7-more-hefazat-men-held', '{\"post_type\":\"Image\",\"post_image\":\"1b8e4616bb183738e8dccfa3bf8cfb18.jpg\",\"post_gallery\":[],\"post_video\":null,\"post_audio\":null}', '<p>Police have apprehended seven more people in connection with last month&rsquo;s mayhem by the supporters of Islamist hardliner Hefazat-e-Islam in Brahmanbaria, taking the total number of arrests to 317, reports news agency UNB.</p>\r\n\r\n<p>The arrests were made from different parts of the district after identifying the accused from video footage and images taken during the violence, police said.</p>\r\n\r\n<p>So far, 55 cases have been filed and 414 accused identified in connection with the mayhem.</p>\r\n\r\n<p>On 27 March, at least five people were killed and around 50 others, including 25 cops, injured in clashes between the members of law enforcement agencies and locals during Hefazat&rsquo;s demonstrations at Nandanpur in Brahmanbaria sadar upazila.</p>', 1, 1, '2021-04-20 10:53:50', '2021-05-16 11:15:31'),
-(15, 'Food Panda in Bangladesh', 2, 'food-panda-in-bangladesh', '{\"post_type\":\"Image\",\"post_image\":\"\",\"post_gallery\":[],\"post_video\":null,\"post_audio\":null}', '<p>Food Panda in Bangladesh</p>', 1, 1, '2021-04-20 19:47:32', '2021-05-16 11:27:26'),
-(16, 'Corona Virus Effect', 3, 'corona-virus-effect', '{\"post_type\":\"Image\",\"post_image\":\"d4680e47a940576429e304a0d0981a6d.jpg\",\"post_gallery\":[],\"post_video\":null,\"post_audio\":null}', '<ul>\r\n	<li>Test purpose</li>\r\n	<li>Test -1</li>\r\n	<li>Test -2</li>\r\n	<li>Test -3</li>\r\n</ul>', 1, 0, '2021-04-20 19:55:03', '2021-04-20 19:55:03'),
-(17, 'Burger  that we likes very much', 2, 'burger-that-we-likes-very-much', '{\"post_type\":\"Image\",\"post_image\":\"5b63b5672e6822e572bd111fc3d72fa1.jpg\",\"post_gallery\":[],\"post_video\":null,\"post_audio\":null}', '<p>Burger &nbsp;that we likes very much</p>', 1, 0, '2021-04-22 13:17:01', '2021-04-22 13:17:01'),
-(19, 'Pizza', 3, 'pizza', '{\"post_type\":\"Image\",\"post_image\":\"154a7a1cd349db69b46154036dadd7db.jpg\",\"post_gallery\":[],\"post_video\":null,\"post_audio\":null}', '<p>Pizza&nbsp; that we likes very much</p>', 1, 1, '2021-04-22 13:18:07', '2021-05-16 11:19:41'),
-(20, 'Others food item', 2, 'others-food-item', '{\"post_type\":\"Gallery\",\"post_image\":\"\",\"post_gallery\":[\"fcb1992582853230f0fdb9870184df76.jpg\",\"1c1558bf9908271d50a6e8f2a9c57021.jpg\",\"bf2034d982ea9ecf5a694363e0e4d410.jpg\"],\"post_video\":null,\"post_audio\":null}', '<p>Others food item</p>', 1, 1, '2021-04-22 13:19:27', '2021-05-16 11:20:25'),
-(21, 'Education-Related Job Titles and Required Skills', 3, 'education-related-job-titles-and-required-skills', '{\"post_type\":\"Image\",\"post_image\":\"3197acc2160639794c389608c1abcb93.jpg\",\"post_gallery\":[],\"post_video\":null,\"post_audio\":null}', '<p>Being a teacher is just one of the many different types of jobs available within the education field. As well as teachers, schools require administrators, principals, crossing guards, and so many other roles, in order to run smoothly and serve students. And, of course, jobs in education extend beyond classrooms and school buildings.&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>If you&#39;re considering working in education, get a glimpse into the field&#39;s outlook, as well as a comprehensive list of education-related job titles.&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<h2>Requirements for Education-Related Roles&nbsp;</h2>', 1, 0, '2021-04-22 13:33:51', '2021-04-22 13:33:51'),
-(23, 'Cultivation of Fruits & Flowers', 3, 'cultivation-of-fruits-flowers', '{\"post_type\":\"Gallery\",\"post_image\":\"\",\"post_gallery\":[\"9829b1fb9a43c5755d7ff13f8f744b08.jpeg\",\"1d52f592582aa260d5195e1685e75f1c.jpg\",\"b12e41ab910582b3978891ca1b7b395e.jpg\",\"ca8461bb1304e1528786535abcf32f12.jpg\"],\"post_video\":null,\"post_audio\":null}', '<p>Cultivation of Fruits &amp; Flowers</p>', 1, 0, '2021-04-22 15:06:32', '2021-04-28 21:05:24'),
-(24, 'ঘরের বাইরে গেলে দুটি মাস্ক ব্যবহারের পরামর্শ', 2, 'ghrer-baire-gele-duti-mask-bzbharer-pramrs', '{\"post_type\":\"Image\",\"post_image\":\"9d0ba3aa7c9db316e7aa96cecbca6fec.jpg\",\"post_gallery\":[],\"post_video\":null,\"post_audio\":null}', '<p>করোনাভাইরাসের সংক্রমণ প্রতিরোধে মানুষকে মাস্ক ব্যবহার করতে বারবার নির্দেশনা দিচ্ছে সরকার। তারপরও মাস্ক পরার বিষয়ে অনেকের মধ্যে শিথিলতা দেখা যাচ্ছে। এ অবস্থায় বাইরে চলাফেরার সময় মাস্ক ব্যবহার না করলে কঠোর আইনি ব্যবস্থা গ্রহণ করা হবে বলে সরকারের পক্ষ থেকে ঘোষণা দেওয়া হয়েছে। প্রয়োজনে প্রত্যেককে দুটি মাস্ক ব্যবহার করার জন্য পরামর্শ দিচ্ছে সরকার।</p>\r\n\r\n<p><br />\r\nআজ সোমবার সরকারি তথ্য বিবরণীতে এ কথা বলা হয়েছে। এতে বলা হয়, জরুরি কাজে কেউ ঘরের বাইরে গেলে করোনাভাইরাসের সংক্রমণ প্রতিরোধে তাঁকে মাস্ক ব্যবহার করার জন্য সরকার বারবার নির্দেশনা দিয়েছে। কিন্তু লক্ষ করা যাচ্ছে, অনেকেই এ নির্দেশনা অমান্য করছেন।</p>', 1, 0, '2021-04-26 14:13:35', '2021-04-26 14:13:35'),
-(31, 'Current Status of Bangladesh', 3, 'current-status-of-bangladesh', '{\"post_type\":\"Gallery\",\"post_image\":\"\",\"post_gallery\":[\"a990b4b320f01c9abdd60694711663db.jpeg\",\"cd98fd45bd50a6ee46baeab643f9abdc.jpg\",\"d3d4d7f2a40bead7def7909b8d93c842.jpg\",\"321de363a13ca5ba6af342765cee60f3.jpg\"],\"post_video\":\"\",\"post_audio\":null}', '<p>Current Status of Bangladesh</p>', 1, 0, '2021-05-16 11:11:59', '2021-05-16 11:11:59'),
-(32, 'BISMILLAH', 2, 'bismillah', '{\"post_type\":\"Video\",\"post_image\":\"\",\"post_gallery\":[],\"post_video\":\"https:\\/\\/www.youtube.com\\/embed\\/pH-aMl4OHTQ\",\"post_audio\":null}', '<p>وأخيرا تم بحمد الله إنجاز فيديو كليب لأنشودة &laquo;بسم الله&raquo; ذات الشهرة العالمية (النسخة بالموسيقى ٢٠١٣) للمنشدة الصغيرة مريم</p>', 1, 0, '2021-05-16 12:05:30', '2021-05-16 12:05:30'),
-(33, 'আল আকসা বাংলা এমেচার ডকুমেন্টারী', 2, 'al-aksa-bangla-emecar-dkumentaree', '{\"post_type\":\"Video\",\"post_image\":\"\",\"post_gallery\":[],\"post_video\":\"https:\\/\\/www.youtube.com\\/embed\\/3ZBSNGqM3JI\",\"post_audio\":null}', '<h1>আল আকসা বাংলা এমেচার ডকুমেন্টারী. Al Aqsa documentary in Bangla.</h1>', 1, 0, '2021-05-16 19:47:31', '2021-05-16 19:47:31'),
-(34, 'Eid ul Fitr 2021: Traditional Dishes That You Must Try This Eid', 2, 'eid-ul-fitr-2021-traditional-dishes-that-you-must-try-this-eid', '{\"post_type\":\"Image\",\"post_image\":\"195bf41bb060795816677d8ede806202.jpg\",\"post_gallery\":[],\"post_video\":\"\",\"post_audio\":null}', '<p>The world is gearing up to celebrate Eid ul Fitr which will be observed on May 13 or 14. Eid marks the end of the holy month of Ramzan/Ramadan during which Muslims fast. On Eid&nbsp;ul&nbsp;Fitr, people offer prayers and gather for a lavish feast later in the day with a sumptuous spread of food to be enjoyed with family and friends, to mark the first daylight meal after a month.</p>\r\n\r\n<p><strong>Here are some of the traditional dishes that are had during Eid ul Fitr 2021 celebration:</strong></p>', 1, 0, '2021-05-16 20:29:00', '2021-05-16 20:29:00');
+(38, 'টিকটক সামাজিক মাধ্যমে যেভাবে ভাইরাল হচ্ছে ইসরায়েল ফিলিস্তিন সংঘাতের খবর', 2, 'tiktk-samajik-madhzme-zevabe-vairal-hcche-israzel-filistin-sngghater-khbr', '{\"post_type\":\"Image\",\"post_image\":\"daa8441f2c25f54f0f360723e1ef0138.jpg\",\"post_gallery\":[],\"post_video\":\"\",\"post_audio\":null}', '<p dir=\"ltr\"><strong>ইসরায়েল আর ফিলিস্তিনের মধ্যে লড়াই যত তীব্র হচ্ছে, তত সেই উত্তেজনা প্রকাশের একটা বড় মাধ্যম হয়ে উঠছে সামাজিক মাধ্যমের ভিডিও অ্যাপ টিকটক।</strong></p>\r\n\r\n<p dir=\"ltr\">এই ভিডিও অ্যাপ একসময় সুপরিচিতি ছিল ভাইরাল হওয়া নাচ-গানের ভিডিওর জন্য। নাচ-গানের ভিডিও শেয়ারের এই সামাজিক প্ল্যাটফর্ম এখন ফিলিস্তিন এবং ইসরায়েলের তরুণ প্রজন্মের জন্য খবর শেয়ার করার একটা গুরুত্বপূর্ণ ফোরাম হয়ে উঠেছে।</p>\r\n\r\n<p dir=\"ltr\">চীনা মালিকানাধীন এই সাইট তরুণদের কাছে খুবই জনপ্রিয়। বিশ্বব্যাপী এই অ্যাপ সক্রিয়ভাবে ব্যবহার করে মাসে প্রায় ৭০ কোটি তরুণ।</p>\r\n\r\n<p dir=\"ltr\">ইসরায়েলকে লক্ষ্য করে ছোঁড়া রকেটের ফুটেজ, ইসরায়েলি হামলায় গাযা বিধ্বস্ত হওয়ার এবং ফিলিস্তিনিদের প্রতিবাদের নানা ছবি এই সাইটে এখন ভাইরাল হয়েছে। এর মাধ্যমে সংঘাতের চিত্র দ্রুত পৌঁছে যাচ্ছে বিশ্বের নানা প্রান্তে মানুষের মোবাইল ফোনের স্ক্রিনে।</p>', 1, 0, '2021-05-17 15:22:42', '2021-05-17 15:22:42'),
+(39, 'লকডাউনের মেয়াদ আরেক দফা বাড়িয়েছে বাংলাদেশ সরকার', 2, 'lkdauner-mezad-arek-dfa-badizeche-banglades-srkar', '{\"post_type\":\"Image\",\"post_image\":\"17bd10a8a27f5140459801d65c7826d5.jpg\",\"post_gallery\":[],\"post_video\":\"\",\"post_audio\":null}', '<p dir=\"ltr\"><strong>করোনাভাইরাস নিয়ে অব্যাহত উদ্বেগের মধ্যে বাংলাদেশে সরকার লকডাউনের মেয়াদ আরও এক সপ্তাহ বাড়িয়েছে।</strong></p>\r\n\r\n<p dir=\"ltr\">সরকারের মন্ত্রিপরিষদ বিভাগের আদেশে জানানো হয়েছে, কোভিড-১৯ এর বিস্তার রোধে সব ধরণের কার্যক্রম ও চলাচলে বিধিনিষেধ এক সপ্তাহ অর্থাৎ ২৩শে মে মধ্যরাত পর্যন্ত বাড়ানো হয়েছে।</p>\r\n\r\n<p dir=\"ltr\">ঈদের আগের দিন গত ১৩ই মে এই সময়সীমা বাড়ানোর আভাস দেয়া হলেও রোববার মন্ত্রিপরিষদ বিভাগ প্রজ্ঞাপনের মাধ্যমের আনুষ্ঠানিক ঘোষণা দিল।</p>\r\n\r\n<p dir=\"ltr\">লকডাউন চলাকালে পূর্বের সব বিধিনিষেধ ও কার্যক্রম অব্যাহত থাকবে। এবারে নতুন করে দুটি শর্ত যোগ করা হয়েছে।</p>', 1, 0, '2021-05-17 15:26:59', '2021-05-17 15:26:59'),
+(40, 'ভারতফেরত আরও তিনজনের শরীরে করোনার ভারতীয় ধরন মিলেছে', 2, 'vartfert-aroo-tinjner-sreere-kronar-varteey-dhrn-mileche', '{\"post_type\":\"Image\",\"post_image\":\"3e8b4edb18353f7d2cfea176b95bd0fe.png\",\"post_gallery\":[],\"post_video\":\"\",\"post_audio\":null}', '<p>যশোর ও নড়াইলে প্রাতিষ্ঠানিক কোয়ারেন্টিনে থাকা আরও তিনজনের নমুনায় করোনার ভারতীয় ধরন (ভ্যারিয়েন্ট) শনাক্ত হয়েছে। আজ মঙ্গলবার যশোর জিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়ের জিনোম সেন্টার ল্যাব থেকে এই তথ্য প্রকাশ করা হয়েছে।</p>\r\n\r\n<p>ল্যাব সূত্রে জানা গেছে, ১২ মে যশোর সদর হাসপাতাল থেকে দুজনের এবং ১৬ মে নড়াইল থেকে একজনের নমুনা সংগ্রহ করে করোনা পরীক্ষার জন্য পাঠানো হয়। তাঁদের করোনা পজিটিভ প্রতিবেদন আসে।</p>', 1, 0, '2021-05-18 12:28:11', '2021-05-18 12:28:11'),
+(41, 'MV BISMILLAH (2013 Edition - ENGLISH)', 2, 'mv-bismillah-2013-edition-english', '{\"post_type\":\"Video\",\"post_image\":\"\",\"post_gallery\":[],\"post_video\":\"https:\\/\\/www.youtube.com\\/embed\\/cHqfk5lMw-E\",\"post_audio\":null}', '<h1>MV BISMILLAH (2013 Edition - ENGLISH)</h1>', 1, 0, '2021-05-18 12:30:16', '2021-05-18 12:30:16'),
+(42, 'ফাইজারের টিকা ১ মাস ফ্রিজে রাখা যাবে', 2, 'faijarer-tika-1-mas-frije-rakha-zabe', '{\"post_type\":\"Gallery\",\"post_image\":\"\",\"post_gallery\":[\"7d57cb32de6988f434c7c605bb76439a.png\",\"767c465ad7f174f8f53baa836aef6f76.jpg\",\"b6e296c64b9d1491513cbfaa4753310e.jpg\"],\"post_video\":\"\",\"post_audio\":null}', '<p>ফাইজার ও বায়োএনটেকের যৌথ উদ্যোগে তৈরি করোনার টিকা এখন আগের চেয়ে বেশি দিন রাখা যাবে ফ্রিজে। ইউরোপীয় ইউনিয়নের ওষুধ নিয়ন্ত্রক সংস্থা এমনটিই বলেছে বলে বিবিসির খবরে জানানো হয়েছে।</p>\r\n\r\n<p>দ্য ইউরোপিয়ান মেডিসিনস এজেন্সি (ইএমএ) জানায়, টিকার ভায়াল খোলা না হলে ফ্রিজে এক মাস পর্যন্ত রাখা যাবে। আগে এই সময়সীমা ছিল পাঁচ দিন।</p>', 1, 0, '2021-05-18 12:35:10', '2021-05-18 12:35:10');
 
 -- --------------------------------------------------------
 
@@ -229,6 +252,12 @@ ALTER TABLE `categories`
   ADD UNIQUE KEY `categories_name_unique` (`name`);
 
 --
+-- Indexes for table `category_post`
+--
+ALTER TABLE `category_post`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -286,7 +315,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `category_post`
+--
+ALTER TABLE `category_post`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -298,13 +333,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `roles`

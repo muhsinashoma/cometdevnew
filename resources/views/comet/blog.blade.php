@@ -31,7 +31,9 @@
 
                                     {{--<h6 class="upper"><span>By</span><a href=""> {{ $post -> user -> name }}</a><span class="dot"></span><span>{{ date('d F, Y', strtotime($post -> created_at) ) }}</span><span class="dot"></span>--}}
 
-                                    <a href="#" class="post-tag">Status</a>,
+                                        @foreach($post ->categories as $cat)
+                                           <a href="#" class="post-tag">{{$cat ->name}} </a>,
+                                         @endforeach
 
                                     </h6>
                                 </div>

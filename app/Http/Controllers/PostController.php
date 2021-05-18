@@ -115,6 +115,8 @@ class PostController extends Controller
     public function store(Request $request)
     {
 
+       // return $request -> all();
+
         $this -> validate($request, [
          'title'      => 'required',
          'content'    => 'required',
@@ -150,14 +152,16 @@ class PostController extends Controller
         ];
 
 
-        Post::create([
+      $post_data =  Post::create([
             'title' => $request->title,
             'user_id' => Auth::user() ->id,
             'slug' =>Str::slug($request->title),
             'featured' =>json_encode($post_featured),   //send data to database as json data by using json_encode() method
-            'content' => $request ->content,
+            'content' => $request -> content,
 
         ]);
+
+        $post_data -> categories() ->attach($request ->cat);
 
         return redirect()-> back() -> with('success', 'Post Added Successfully !');
 

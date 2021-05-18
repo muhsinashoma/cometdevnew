@@ -14,7 +14,7 @@ class Category extends Model
 
     // Now I am at category table and One category can have multiple posts. Relation will be many to many
 
-   //  One category  can have multiple posts
+   //  One category  can have multiples posts
 
     public function posts(){
         return $this -> belongsToMany('App\Models\Post');
