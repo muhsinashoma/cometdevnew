@@ -65,7 +65,9 @@
                 </li>
 
 
-                {{ Route::currentRouteName() }}
+                 {{--{{'Test Purpose'}}--}}
+
+                {{--{{ Route::currentRouteName() }}--}}
 
             </ul>
         </div>

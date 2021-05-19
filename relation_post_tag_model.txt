@@ -1,0 +1,36 @@
+
+19-05-2021
+
+--How we will work with tag
+
+--We will create relationship between post model and tag model
+
+--We will find tags from post model and same way we will find posts from tag model
+
+
+     //We will create relationship between post model and tag model and we have to create another migration file  and migration file name will be post_tag
+     //Migration file name will be alphabetic way post_tag
+     //We will find tags from post model
+     //Now we have to think from post model, Multiple tags can have in one post
+
+
+    //same way we will find posts from tag model
+
+    //We will create relationship between post model and tag model and we have to create another migration file and migration file name will be post_tag
+    //Migration file name will be alphabetic way post_tag
+    //We will find tags from post model
+    //Now we have to think from tag model, Multiple posts can have in one tag
+
+E:\xampp\htdocs\cometdev>php artisan make:migration create_post_tag_table --create=post_tag
+
+public function up()
+    {
+        Schema::create('post_tag', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedInteger('post_id');    //unsignedInteger means value will be never minus and convention(alphabetic order -> post_id, tag_id) follow will be better
+            $table->unsignedInteger('tag_id');
+            $table->timestamps();
+        });
+    }
+
+E:\xampp\htdocs\cometdev>php artisan migrate

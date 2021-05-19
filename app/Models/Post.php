@@ -28,4 +28,17 @@ class Post extends Model
         return $this -> belongsToMany('App\Models\Category');  //belonsToMany() function have to use for many to many relationship
     }
 
+
+     //We will create relationship between post model and tag model and we have to create another migration file  and migration file name will be post_tag
+     //Migration file name will be alphabetic way post_tag
+     //We will find tags from post model
+     //Now we have to think from post model, Multiple tags can have in one post
+
+
+     //We will find how many tags have inside one post
+
+      public function tags(){
+         return $this->belongsToMany('App\Models\Tag');
+      }
+
 }
