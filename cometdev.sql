@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2021 at 01:14 PM
+-- Generation Time: May 18, 2021 at 05:11 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -79,13 +79,7 @@ INSERT INTO `category_post` (`id`, `post_id`, `category_id`, `created_at`, `upda
 (7, 42, 2, NULL, NULL),
 (8, 42, 5, NULL, NULL),
 (9, 42, 6, NULL, NULL),
-(10, 42, 9, NULL, NULL),
-(11, 43, 7, NULL, NULL),
-(12, 43, 8, NULL, NULL),
-(13, 43, 9, NULL, NULL),
-(14, 44, 3, NULL, NULL),
-(15, 44, 4, NULL, NULL),
-(16, 44, 5, NULL, NULL);
+(10, 42, 9, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -127,8 +121,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (16, '2021_03_21_210315_create_posts_table', 3),
 (17, '2021_03_25_212359_create_tags_table', 3),
 (18, '2021_03_21_211321_create_categories_table', 4),
-(19, '2021_04_01_233119_create_category_post_table', 4),
-(20, '2021_05_19_162418_create_post_tag_table', 5);
+(19, '2021_04_01_233119_create_category_post_table', 4);
 
 -- --------------------------------------------------------
 
@@ -170,34 +163,7 @@ INSERT INTO `posts` (`id`, `title`, `user_id`, `slug`, `featured`, `content`, `s
 (39, 'লকডাউনের মেয়াদ আরেক দফা বাড়িয়েছে বাংলাদেশ সরকার', 2, 'lkdauner-mezad-arek-dfa-badizeche-banglades-srkar', '{\"post_type\":\"Image\",\"post_image\":\"17bd10a8a27f5140459801d65c7826d5.jpg\",\"post_gallery\":[],\"post_video\":\"\",\"post_audio\":null}', '<p dir=\"ltr\"><strong>করোনাভাইরাস নিয়ে অব্যাহত উদ্বেগের মধ্যে বাংলাদেশে সরকার লকডাউনের মেয়াদ আরও এক সপ্তাহ বাড়িয়েছে।</strong></p>\r\n\r\n<p dir=\"ltr\">সরকারের মন্ত্রিপরিষদ বিভাগের আদেশে জানানো হয়েছে, কোভিড-১৯ এর বিস্তার রোধে সব ধরণের কার্যক্রম ও চলাচলে বিধিনিষেধ এক সপ্তাহ অর্থাৎ ২৩শে মে মধ্যরাত পর্যন্ত বাড়ানো হয়েছে।</p>\r\n\r\n<p dir=\"ltr\">ঈদের আগের দিন গত ১৩ই মে এই সময়সীমা বাড়ানোর আভাস দেয়া হলেও রোববার মন্ত্রিপরিষদ বিভাগ প্রজ্ঞাপনের মাধ্যমের আনুষ্ঠানিক ঘোষণা দিল।</p>\r\n\r\n<p dir=\"ltr\">লকডাউন চলাকালে পূর্বের সব বিধিনিষেধ ও কার্যক্রম অব্যাহত থাকবে। এবারে নতুন করে দুটি শর্ত যোগ করা হয়েছে।</p>', 1, 0, '2021-05-17 15:26:59', '2021-05-17 15:26:59'),
 (40, 'ভারতফেরত আরও তিনজনের শরীরে করোনার ভারতীয় ধরন মিলেছে', 2, 'vartfert-aroo-tinjner-sreere-kronar-varteey-dhrn-mileche', '{\"post_type\":\"Image\",\"post_image\":\"3e8b4edb18353f7d2cfea176b95bd0fe.png\",\"post_gallery\":[],\"post_video\":\"\",\"post_audio\":null}', '<p>যশোর ও নড়াইলে প্রাতিষ্ঠানিক কোয়ারেন্টিনে থাকা আরও তিনজনের নমুনায় করোনার ভারতীয় ধরন (ভ্যারিয়েন্ট) শনাক্ত হয়েছে। আজ মঙ্গলবার যশোর জিজ্ঞান ও প্রযুক্তি বিশ্ববিদ্যালয়ের জিনোম সেন্টার ল্যাব থেকে এই তথ্য প্রকাশ করা হয়েছে।</p>\r\n\r\n<p>ল্যাব সূত্রে জানা গেছে, ১২ মে যশোর সদর হাসপাতাল থেকে দুজনের এবং ১৬ মে নড়াইল থেকে একজনের নমুনা সংগ্রহ করে করোনা পরীক্ষার জন্য পাঠানো হয়। তাঁদের করোনা পজিটিভ প্রতিবেদন আসে।</p>', 1, 0, '2021-05-18 12:28:11', '2021-05-18 12:28:11'),
 (41, 'MV BISMILLAH (2013 Edition - ENGLISH)', 2, 'mv-bismillah-2013-edition-english', '{\"post_type\":\"Video\",\"post_image\":\"\",\"post_gallery\":[],\"post_video\":\"https:\\/\\/www.youtube.com\\/embed\\/cHqfk5lMw-E\",\"post_audio\":null}', '<h1>MV BISMILLAH (2013 Edition - ENGLISH)</h1>', 1, 0, '2021-05-18 12:30:16', '2021-05-18 12:30:16'),
-(42, 'ফাইজারের টিকা ১ মাস ফ্রিজে রাখা যাবে', 2, 'faijarer-tika-1-mas-frije-rakha-zabe', '{\"post_type\":\"Gallery\",\"post_image\":\"\",\"post_gallery\":[\"7d57cb32de6988f434c7c605bb76439a.png\",\"767c465ad7f174f8f53baa836aef6f76.jpg\",\"b6e296c64b9d1491513cbfaa4753310e.jpg\"],\"post_video\":\"\",\"post_audio\":null}', '<p>ফাইজার ও বায়োএনটেকের যৌথ উদ্যোগে তৈরি করোনার টিকা এখন আগের চেয়ে বেশি দিন রাখা যাবে ফ্রিজে। ইউরোপীয় ইউনিয়নের ওষুধ নিয়ন্ত্রক সংস্থা এমনটিই বলেছে বলে বিবিসির খবরে জানানো হয়েছে।</p>\r\n\r\n<p>দ্য ইউরোপিয়ান মেডিসিনস এজেন্সি (ইএমএ) জানায়, টিকার ভায়াল খোলা না হলে ফ্রিজে এক মাস পর্যন্ত রাখা যাবে। আগে এই সময়সীমা ছিল পাঁচ দিন।</p>', 1, 0, '2021-05-18 12:35:10', '2021-05-18 12:35:10'),
-(43, 'ইসরায়েল-ফিলিস্তিন সংঘাত নিয়ে যা বলল সৌদি আরব', 4, 'israyel-filistin-sngghat-niye-za-bll-soudi-arb', '{\"post_type\":\"Gallery\",\"post_image\":\"7874b63a8b3dd41b15225d6e5456b4d0.jpg\",\"post_gallery\":[],\"post_video\":\"\",\"post_audio\":null}', '<p>ইসরায়েল-ফিলিস্তিন সংঘাত পুরো অঞ্চলকে &lsquo;ভুল পথে&rsquo; নিয়ে যাচ্ছে বলে মন্তব্য করেছে সৌদি আরব। বার্তা সংস্থা এএফপির প্রতিবেদনে এ তথ্য জানানো হয়।</p>\r\n\r\n<p>সৌদি আরবের পররাষ্ট্রমন্ত্রী ফয়সাল বিন ফারহান ইসরায়েল-ফিলিস্তিন সংঘাত নিয়ে গতকাল মঙ্গলবার এ মন্তব্য করেন। একই সঙ্গে তিনি এ সংঘাত বন্ধের আহ্বান জানিয়েছেন।</p>\r\n\r\n<p>এক সপ্তাহের বেশি সময় ধরে গাজায় রক্তক্ষয়ী হামলা চালাচ্ছে ইসরায়েল। গাজার স্বাস্থ্য কর্তৃপক্ষের তথ্যমতে, ইসরায়েলি হামলায় এখন পর্যন্ত অন্তত ২১৭ জন ফিলিস্তিনি নিহত হয়েছেন। নিহত ব্যক্তিদের মধ্যে প্রায় ১০০ জন নারী ও শিশু। হামলায় আহত হয়েছেন প্রায় দেড় হাজার ফিলিস্তিনি।</p>\r\n\r\n<p>হামলার জবাবে গাজা থেকে ইসরায়েল লক্ষ্য করে রকেট ছুড়ছে হামাস। ইসরায়েলের ভাষ্য, চলমান সংঘাতে ইসরায়েলের পক্ষে ১২ জন নিহত হয়েছেন। তার মধ্যে দুটি শিশু।</p>\r\n\r\n<p>দুই পক্ষের সংঘাত বন্ধে আন্তর্জাতিক পর্যায়ে কূটনৈতিক তৎপরতা চলছে। আন্তর্জাতিক মহল যুদ্ধবিরতির আহ্বান জানাচ্ছে। তবে ইসরায়েল হামলা অব্যাহত রাখার কথা বলছে।</p>\r\n\r\n<p>সৌদির পররাষ্ট্রমন্ত্রী ফয়সাল বিন ফারহান বার্তা সংস্থা এএফপিকে বলেন, &lsquo;এসব (সংঘাত) আমাদের পুরোপুরি ভুল পথে ঠেলে দিচ্ছে। এর অর্থ হলো, আমরা টেকসই শান্তির দিকে যাত্রাকে আরও কঠিন করে তুলছি।&rsquo;</p>\r\n\r\n<p>সুদান ও আফ্রিকা নিয়ে ফ্রান্সে অনুষ্ঠিত সম্মেলনের ফাঁকে কথা বলেন সৌদির পররাষ্ট্রমন্ত্রী। ইসরায়েল-ফিলিস্তিন সংঘাত উগ্রবাদীদের ক্ষমতায়িত করছে বলেও মন্তব্য করেন ফয়সাল বিন ফারহান।&nbsp;</p>\r\n\r\n<p>সৌদির পররাষ্ট্রমন্ত্রী বলেন, &lsquo;এটি আমাদের অঞ্চলের সবচেয়ে অসহিষ্ণু কণ্ঠকে শক্তিশালী করছে। সত্যিকারের শান্তি অনুসন্ধানের পথকে কঠিন করে তুলছে।&rsquo;</p>\r\n\r\n<p>ফয়সাল বিন ফারহান বলেন, গুরুত্বসহকারে সব পক্ষকে আলোচনায় উৎসাহিত করার জন্য সবাইকে একসঙ্গে কাজ করতে হবে। সৌদি পররাষ্ট্রমন্ত্রী বলেন, প্রথমেই সহিংসতা বন্ধ করতে হবে। তারপর চূড়ান্ত নিষ্পত্তির জন্য গুরুত্বসহকারে শান্তি আলোচনায় বসতে হবে।</p>\r\n\r\n<p>ফয়সাল বিন ফারহান আরও বলেন, চূড়ান্ত বন্দোবস্তে অবশ্যই পূর্ব জেরুজালেমকে রাজধানী রেখে একটি ফিলিস্তিন রাষ্ট্রের বিষয়টি অন্তর্ভুক্ত থাকতে হবে।</p>\r\n\r\n<p>&nbsp;</p>', 1, 0, '2021-05-19 10:51:23', '2021-05-19 10:51:23'),
-(44, 'Coronavirus India Live Updates: Centre only worried about its image in Singapore, says Sisodia; Tamil Nadu top contributor to India’s caseload', 4, 'coronavirus-india-live-updates-centre-only-worried-about-its-image-in-singapore-says-sisodia-tamil-nadu-top-contributor-to-indias-caseload', '{\"post_type\":\"Gallery\",\"post_image\":\"\",\"post_gallery\":[\"41946b5c8f22a45b533e820c4dc03663.jpg\",\"a284dfe7d13888e7e88b6ffdb97a105a.jpg\",\"707b79bc847e2f504cbfc1329d002432.png\"],\"post_video\":\"\",\"post_audio\":null}', '<p><strong><a href=\"https://indianexpress.com/about/coronavirus/\">Coronavirus</a>&nbsp;India Live Updates:</strong>&nbsp;Hours after External Affairs Minister slammed Delhi Chief Minister for his remarks on &ldquo;Singapore strain,&rdquo; Deputy CM Manish Sisodia hit back accusing the Centre of being bothered only about its &ldquo;image in Singapore.&rdquo; Stating that the Centre was doing &ldquo;cheap politics,&rdquo; Sisodia said, &ldquo;Centre is worried about its image in Singapore but not about children under threat from COVID strain. It did not consider alerts about COVID London strain and many lost their family members due to it.&rdquo;</p>\r\n\r\n<p>India reported 4,529 deaths on Tuesday, the highest so far in a day. Maharashtra reported over 1,300 deaths, nearly half of which were more than a week old. Karnataka reported 525 deaths, while Tamil Nadu added 364 to the toll. Over 2.67 lakh fresh cases were reported in the country. While Tamil Nadu recorded more than 33,000 cases, Karnataka and Kerala both reported over 30,000 cases. Maharashtra, which was leading the list for months reported the country&rsquo;s fourth highest case count with 28,438 new infections. The active cases in the country dropped further to 32.26 lakh.</p>', 1, 0, '2021-05-19 11:00:23', '2021-05-19 11:00:23');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `post_tag`
---
-
-CREATE TABLE `post_tag` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `post_id` int(10) UNSIGNED NOT NULL,
-  `tag_id` int(10) UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `post_tag`
---
-
-INSERT INTO `post_tag` (`id`, `post_id`, `tag_id`, `created_at`, `updated_at`) VALUES
-(1, 43, 5, NULL, NULL),
-(2, 43, 8, NULL, NULL),
-(3, 44, 6, NULL, NULL),
-(4, 44, 7, NULL, NULL),
-(5, 44, 8, NULL, NULL);
+(42, 'ফাইজারের টিকা ১ মাস ফ্রিজে রাখা যাবে', 2, 'faijarer-tika-1-mas-frije-rakha-zabe', '{\"post_type\":\"Gallery\",\"post_image\":\"\",\"post_gallery\":[\"7d57cb32de6988f434c7c605bb76439a.png\",\"767c465ad7f174f8f53baa836aef6f76.jpg\",\"b6e296c64b9d1491513cbfaa4753310e.jpg\"],\"post_video\":\"\",\"post_audio\":null}', '<p>ফাইজার ও বায়োএনটেকের যৌথ উদ্যোগে তৈরি করোনার টিকা এখন আগের চেয়ে বেশি দিন রাখা যাবে ফ্রিজে। ইউরোপীয় ইউনিয়নের ওষুধ নিয়ন্ত্রক সংস্থা এমনটিই বলেছে বলে বিবিসির খবরে জানানো হয়েছে।</p>\r\n\r\n<p>দ্য ইউরোপিয়ান মেডিসিনস এজেন্সি (ইএমএ) জানায়, টিকার ভায়াল খোলা না হলে ফ্রিজে এক মাস পর্যন্ত রাখা যাবে। আগে এই সময়সীমা ছিল পাঁচ দিন।</p>', 1, 0, '2021-05-18 12:35:10', '2021-05-18 12:35:10');
 
 -- --------------------------------------------------------
 
@@ -235,13 +201,13 @@ CREATE TABLE `tags` (
 --
 
 INSERT INTO `tags` (`id`, `name`, `slug`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Food', 'food', '1', '2021-04-12 19:06:21', '2021-04-12 19:06:21'),
-(2, 'Health', 'health', '1', '2021-04-12 19:07:04', '2021-04-12 19:07:04'),
-(3, 'International', 'International', '1', '2021-04-12 19:08:52', '2021-04-12 19:08:52'),
-(4, 'Corona Virous', 'corona-virous', '1', '2021-04-12 19:22:21', '2021-04-12 19:22:21'),
+(1, 'Tag-1', 'tag-1', '1', '2021-04-12 19:06:21', '2021-04-12 19:06:21'),
+(2, 'Tag- 2', 'tag-2', '1', '2021-04-12 19:07:04', '2021-04-12 19:07:04'),
+(3, 'Tag Test Purpose', 'tag-test-purpose', '1', '2021-04-12 19:08:52', '2021-04-12 19:08:52'),
+(4, 'Rag - Value', 'rag-value', '1', '2021-04-12 19:22:21', '2021-04-12 19:22:21'),
 (5, 'Eid Offer', 'eid-offer', '1', '2021-04-14 06:17:56', '2021-04-14 06:17:56'),
 (6, 'Lock down', 'lock-down', '1', '2021-04-14 18:10:58', '2021-04-14 18:10:58'),
-(7, 'Bangladesh', 'bangladesh', '1', '2021-05-16 11:42:35', '2021-05-16 11:42:35'),
+(7, 'Current Tag', 'current-tag', '1', '2021-05-16 11:42:35', '2021-05-16 11:42:35'),
 (8, 'Cartoon', 'cartoon', '1', '2021-05-16 12:02:25', '2021-05-16 12:02:25');
 
 -- --------------------------------------------------------
@@ -272,8 +238,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `role_id`, `email`, `phone_number`, `username`, `email_verified_at`, `password`, `photo`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
 (2, 'Muhsina Akter', 2, 'muhsina.akter2@gmail.com', '8801715022945', NULL, NULL, '$2y$10$4auDxhlPkUT2ifntDKxxa.VFJSZjo3QjDY0aTQkb3JNaoj9GGvKhy', 'avatar.jpg', 1, NULL, '2021-04-07 06:48:05', '2021-04-07 06:48:05'),
-(3, 'Salim Islam', 2, 'salimhasanriad@gmail.com', '8801847102314', NULL, NULL, '$2y$10$IieOO6ZnALOx4jjjj1PF1.NbQxg6BV5fL30Cxc298O3gfdYkucEBy', 'avatar.jpg', 1, NULL, '2021-04-07 06:52:16', '2021-04-07 06:52:16'),
-(4, 'Radia Islam', 2, 'radia.islam@gmail.com', '909090', NULL, NULL, '$2y$10$uur651qXFhGVdq423eetJudbXvTpWSsar.Rr9rHg/QMGsKO9DrIwy', 'avatar.jpg', 1, NULL, '2021-05-19 10:32:36', '2021-05-19 10:32:36');
+(3, 'Salim Islam', 2, 'salimhasanriad@gmail.com', '8801847102314', NULL, NULL, '$2y$10$IieOO6ZnALOx4jjjj1PF1.NbQxg6BV5fL30Cxc298O3gfdYkucEBy', 'avatar.jpg', 1, NULL, '2021-04-07 06:52:16', '2021-04-07 06:52:16');
 
 --
 -- Indexes for dumped tables
@@ -319,12 +284,6 @@ ALTER TABLE `posts`
   ADD UNIQUE KEY `posts_title_unique` (`title`);
 
 --
--- Indexes for table `post_tag`
---
-ALTER TABLE `post_tag`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `roles`
 --
 ALTER TABLE `roles`
@@ -362,7 +321,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `category_post`
 --
 ALTER TABLE `category_post`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -374,19 +333,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
-
---
--- AUTO_INCREMENT for table `post_tag`
---
-ALTER TABLE `post_tag`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -404,7 +357,7 @@ ALTER TABLE `tags`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

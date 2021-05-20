@@ -26,6 +26,10 @@ Route::get('/', function () {
 
 Route::get('blog', [App\Http\Controllers\BlogPageController::class, 'showBlogPage']);
 
+//Blog Search
+Route::post('blog', 'App\Http\Controllers\BlogPageController@blogSearch')->name('post.search');
+
+
 
 //Route::get('blog', function(){ }); //This is called callback function/closer function/anonimous function/
 
@@ -64,5 +68,10 @@ Route::get('category/status-active/{id}' , 'App\Http\Controllers\CategoryControl
 
 // Post Tag Route
 Route::resource('tag' , 'App\Http\Controllers\TagController');
+
+
+
+
+
 
 

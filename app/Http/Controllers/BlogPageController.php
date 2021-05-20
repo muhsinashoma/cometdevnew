@@ -28,6 +28,34 @@ class BlogPageController extends Controller
         ]);
     }
 
+/**
+ * Blog search by search box
+ */
+//We have used Post method that's why from request data will be catch and taken
+public function blogSearch(Request $request){
+
+     // return $request -> all();   //to test search value  {"_token":"ySHIiJyqeJPDBrFS0E50jcTEhAo5Jtbd9nR87ki4","search":"ami"}
+
+    if(empty($request ->search)){
+        $search = '';
+    }else{
+        $search = $request ->search;
+    }
+
+
+     $search = $request ->search;
+     $posts = Post::where('title', 'LIKE', '%'. $search .'%') ->orWhere('content', 'LIKE', '%'.$search.'%') ->orWhere('created_at','LIKE', '%'.$search.'%') -> latest() ->paginate();
+
+//     echo "pre";
+//     print_r($posts);
+//     echo "pre";
+
+    return view('comet.blog-search', [
+        'all_posts' => $posts
+    ]); //return to any view
+
+}
+
     /**
      * Blog Page Show backup main
      */
