@@ -28,7 +28,7 @@ Route::get('blog', [App\Http\Controllers\BlogPageController::class, 'showBlogPag
 
 //Blog Search
 Route::post('blog', 'App\Http\Controllers\BlogPageController@blogSearch')->name('post.search');
-
+Route::get('blog/category/{slug}','App\Http\Controllers\BlogPageController@blogSearchByCat')->name('post.cat.search');
 
 
 //Route::get('blog', function(){ }); //This is called callback function/closer function/anonimous function/

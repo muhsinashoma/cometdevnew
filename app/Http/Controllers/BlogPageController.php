@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -55,6 +56,29 @@ public function blogSearch(Request $request){
     ]); //return to any view
 
 }
+
+/**
+ * Blog search by category
+ */
+
+  public function blogSearchByCat($slug){
+     // echo $slug; //to see the selected category
+      $cats = Category::where('slug', $slug) ->first();
+      //return $cats;  //to catch the category id and we will fetch all posts under this id
+
+       foreach ($cats ->posts as $post){
+
+           if(isset($post)){
+              // echo $post ->title;
+               return view('comet.category-blog', [
+                   'all_posts' =>$cats ->posts
+               ]);
+           }
+       }
+
+  }
+
+
 
     /**
      * Blog Page Show backup main
