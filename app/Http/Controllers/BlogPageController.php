@@ -79,6 +79,15 @@ public function blogSearch(Request $request){
   }
 
 
+    /**
+     * Show single blog
+     */
+
+    public function blogSingle($slug){
+        $single_post =  Post::where('slug', $slug) ->first();
+        return view('comet.blog-single', compact('single_post'));  //to show blog-single page
+    }
+
 
     /**
      * Blog Page Show backup main

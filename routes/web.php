@@ -23,12 +23,15 @@ Route::get('/', function () {
 //Route::get('blog', [App\Http\Controllers\BlogPageControllerBackup::class , 'showBlogPage']);
 
 //Frontend Controller
-
 Route::get('blog', [App\Http\Controllers\BlogPageController::class, 'showBlogPage']);
 
 //Blog Search
 Route::post('blog', 'App\Http\Controllers\BlogPageController@blogSearch')->name('post.search');
 Route::get('blog/category/{slug}','App\Http\Controllers\BlogPageController@blogSearchByCat')->name('post.cat.search');
+
+Route::get('blog-single/{slug}', 'App\Http\Controllers\BlogPageController@blogSingle')->name('post.single');
+
+
 
 
 //Route::get('blog', function(){ }); //This is called callback function/closer function/anonimous function/
