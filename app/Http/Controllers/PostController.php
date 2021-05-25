@@ -146,19 +146,22 @@ class PostController extends Controller
              'post_type'          => $request -> post_type,
              'post_image'         => $unique_file_name,
              'post_gallery'       => $gall_images,
-            //'post_video'         => $request -> video,
-             'post_video'         => str_replace('watch?v=', 'embed/', $request ->video),
-             'post_audio'         => $request -> audio,
+             //'post_video'         => $request -> video,
+           // 'post_video'         => str_replace('watch?v=', 'embed/', $request ->video),
+              'post_video'          => $this ->getEmbed($request->video),
+              'post_audio'          => $request -> audio,
         ];
+
 
 
       $post_data =  Post::create([
             'title' => $request->title,
             'user_id' => Auth::user() ->id,
-            //'slug' =>Str::slug($request->title),
-            'slug' => str_replace(' ', '-', $request -> title),
-            'featured' =>json_encode($post_featured),   //send data to database as json data by using json_encode() method
-            'content' => $request -> content,
+             //'slug' =>Str::slug($request->title),
+             //'slug' => str_replace(' ', '-', $request -> title),
+             'slug' =>  $this->getSlug($request -> title),
+             'featured' =>json_encode($post_featured),   //send data to database as json data by using json_encode() method
+             'content' => $request -> content,
 
         ]);
 

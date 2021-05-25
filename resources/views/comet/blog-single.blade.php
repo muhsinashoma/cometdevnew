@@ -1,5 +1,10 @@
 @extends('comet.layouts.app')
 
+
+@section('page-title', $single_post ->title)
+  @section('post-cat',  'This is a Blog Post for comet' )
+
+
 @section('main-content')
 
     <section>
@@ -43,7 +48,7 @@
                       </ul>
                     </div>
                   </div>
-                   
+
                   @elseif($featured ->post_type =='Video')
                     <div class="post-media">
                       <div class="media-video">
