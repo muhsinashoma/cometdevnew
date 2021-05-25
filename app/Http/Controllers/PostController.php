@@ -147,8 +147,8 @@ class PostController extends Controller
              'post_image'         => $unique_file_name,
              'post_gallery'       => $gall_images,
              //'post_video'         => $request -> video,
-           // 'post_video'         => str_replace('watch?v=', 'embed/', $request ->video),
-              'post_video'          => $this ->getEmbed($request->video),
+             'post_video'         => str_replace('watch?v=', 'embed/', $request ->video),
+              //'post_video'          => $this ->getEmbed($request->video),
               'post_audio'          => $request -> audio,
         ];
 

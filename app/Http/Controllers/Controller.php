@@ -58,11 +58,12 @@ class Controller extends BaseController
 
 
     protected function getEmbed($link){
+        if(str_contains($link, 'youtube'))
+        {
+            return str_replace('watch?v=', 'embed/',  $link);
 
-        if(str_contains($link, 'youtube')){
-            return str_replace('watch?v=', 'embed/', $link);
-        } elseif (str_contains($link, 'vimeo')){
-            return str_replace('vimeo.com', 'player.vimeo.com/video', $link);
+        } elseif(str_contains($link, 'vimeo')){
+            return str_replace('vimeo.com',  'player.vimeo.com/video',  $link);
         }
 
         else{
